@@ -1,0 +1,161 @@
+:root {
+  --text-color: #111;
+  --bg-color: #B4E3E3 ;
+  
+}
+html{
+  scroll-behavior: smooth;
+}
+*{
+  box-sizing:border-box;
+
+
+}
+
+img{
+  height: 80000vh;     /*99 1500*/
+  width:  150000vh;
+}
+h2{
+  font-family:'標楷體';
+  text-align:center;
+}
+p{
+  text-align:center;
+  justify-content:center;
+  font-family:'標楷體';
+  transition: transform 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+  
+}
+a{
+  font-family:'標楷體';
+}
+section{
+  background-color:#000000;
+
+}
+#first{
+ background-color: #E6E1CA;
+  color: #fff;
+}
+#last{
+  background-color:#6E8CA7;
+  color: #FFFFFF;
+}
+body {
+ 
+  color: #FFFFFF;
+  background:  #B4E3E3;
+  transition: 0.3s ease-out;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
+section:not(#sectionPin) {  /*除了#sectionPin以外，其他全套用底下的程式碼*/
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 50px 10vw;
+  margin: auto;
+  place-items: center;
+}
+
+
+
+@keyframes move {
+	to {
+		/* Move horizontally so that right edge is aligned against the viewport */
+		transform: translateX(calc(-100% + 100vw));
+	}
+}
+
+#sectionPin {
+	/* Stretch it out, so that we create room for the horizontal scroll animation */
+	height: 500vh; /*原本是500*/
+	overflow: visible; /* To make position sticky work … */
+
+  display: flex;
+	view-timeline-name: --section-pin-tl;
+	view-timeline-axis: block;
+  color: #FFFFFF;
+  
+  
+}
+
+.pin-wrap-sticky {
+	/* Stick to Top */
+	height: 120vh;
+	width: 100vw;   /* 100 */
+	position: sticky;
+	top: 0;
+
+	width: 100vw;  /* 100 */
+	overflow-x: hidden;
+}
+
+.pin-wrap {
+	height: 100vh;   /* 100 */
+	width: 1500vmax;  /* 250 */
+
+
+	/* Hook animation */
+	will-change: transform;
+	animation: linear move forwards;
+
+	/* Link animation to view-timeline */
+	animation-timeline: --section-pin-tl;
+	animation-range: contain 0% contain 100%;
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 10vw;
+  & > * {
+    min-width: 60vw;
+    padding: 0 5vw;
+  }
+  
+  
+  
+}
+.hideUp header {
+  top: -48px;
+}
+
+h1{
+  position:absolute;
+  color:ffffff;
+  z-index:4;
+  left:40%;
+  top:40%;
+
+}
+.caveat-main {
+  font-family: "Caveat", cursive;
+  font-size:100px;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.line{
+  position:absolute;
+  height:60px;
+  width:400px;
+  z-index:3;
+  right:40%;
+  top:48%;
+  background-color:#45676F;
+  border-radius:30px;
+}
+.img-fluid{
+  text-align:center;
+  
+ 
+}
+.firstArea{
+  position:relative;
+}
